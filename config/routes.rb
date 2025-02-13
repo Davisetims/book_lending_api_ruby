@@ -8,3 +8,11 @@ Rails.application.routes.draw do
   # Defines the root path route ("/")
   # root "posts#index"
 end
+
+Rails.application.routes.draw do
+  resources :books, only: [ :index ]  # Creates GET /books route
+end
+
+Rails.application.routes.draw do
+  resources :books, only: [ :index, :create ]  # Adds POST /books route
+end
