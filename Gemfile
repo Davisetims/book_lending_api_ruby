@@ -49,3 +49,5 @@ end
 
 
 gem "sqlite3", "~> 2.5"
+
+gem "devise", "~> 4.9"
