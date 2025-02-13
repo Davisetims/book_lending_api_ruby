@@ -47,3 +47,5 @@ group :development, :test do
 end
 
 
+
+gem "sqlite3", "~> 2.5"
