@@ -9,10 +9,7 @@ Rails.application.routes.draw do
   # root "posts#index"
 end
 
-Rails.application.routes.draw do
-  resources :books, only: [ :index ]  # Creates GET /books route
-end
 
 Rails.application.routes.draw do
-  resources :books, only: [ :index, :create ]  # Adds POST /books route
+  resources :books, only: [ :index, :create, :update ]  # Adds PATCH /books/:id
 end
