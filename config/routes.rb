@@ -11,5 +11,5 @@ end
 
 
 Rails.application.routes.draw do
-  resources :books, only: [ :index, :create, :update ]  # Adds PATCH /books/:id
+  resources :books, only: [ :index, :create, :update, :destroy ]  # Adds DELETE /books/:id
 end
