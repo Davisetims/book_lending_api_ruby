@@ -1,90 +1,219 @@
-/* Apply a full-screen background image */
+/* Reset and base styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+}
+
 body {
-    background: url('https://picsum.photos/1600/900') no-repeat center center/cover;
-    color: #ffffff;
-    font-family: 'Poppins', sans-serif;
+    background-color: #f5f4ff;
+}
+
+/* Container styling */
+.container {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100vh;
-    margin: 0;
+    min-height: 100vh;
+    padding: 24px;
+    background: linear-gradient(135deg, #f5f4ff 0%, #f0f0ff 100%);
+    position: relative;
 }
 
-/* Dark overlay for better readability */
-body::before {
-    content: "";
+/* Decorative dots */
+.container::before,
+.container::after {
+    content: '';
     position: absolute;
-    top: 0;
-    left: 0;
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background: #5B5FFF;
+    opacity: 0.2;
+}
+
+.container::before {
+    top: 10%;
+    left: 15%;
+}
+
+.container::after {
+    bottom: 15%;
+    right: 10%;
+}
+
+/* Login box */
+.login-box {
+    background: white;
+    border-radius: 24px;
     width: 100%;
-    height: 100%;
-    background: rgba(0, 0, 0, 0.4);
-    /* Adds a dark filter */
+    max-width: 800px;
+    min-height: 500px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    overflow: hidden;
+    box-shadow: 0 8px 24px rgba(91, 95, 255, 0.08);
+}
+
+/* Left side - Form */
+.form-section {
+    padding: 48px;
+}
+
+/* Logo */
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 40px;
+}
+
+.logo img {
+    height: 32px;
+}
+
+/* Form elements */
+h2 {
+    font-size: 36px;
+    font-weight: 800;
+    margin-bottom: 8px;
+    color: #111827;
+}
+
+.subtitle {
+    color: #6B7280;
+    font-size: 14px;
+    margin-bottom: 32px;
+}
+
+.input-box {
+    margin-bottom: 24px;
+}
+
+.input-box label {
+    display: block;
+    font-size: 14px;
+    font-weight: 500;
+    color: #374151;
+    margin-bottom: 8px;
+}
+
+.form-control {
+    width: 100%;
+    height: 48px;
+    padding: 0 16px;
+    border: 1px solid #E5E7EB;
+    border-radius: 8px;
+    font-size: 15px;
+    transition: all 0.2s ease;
+}
+
+.form-control:focus {
+    outline: none;
+    border-color: #5B5FFF;
+    box-shadow: 0 0 0 4px rgba(91, 95, 255, 0.1);
+}
+
+/* Country select specific styling */
+.country-select {
+    position: relative;
+}
+
+.country-select .form-control {
+    padding-left: 40px;
+    appearance: none;
+    background-image: url("data:image/svg+xml,%3Csvg width='10' height='6' viewBox='0 0 10 6' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1 1L5 5L9 1' stroke='%236B7280' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 16px center;
+}
+
+.country-select::before {
+    content: '🇺🇸';
+    position: absolute;
+    left: 16px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 16px;
+}
+
+/* Button */
+.btn-primary {
+    width: 100%;
+    height: 48px;
+    background-color: #5B5FFF;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+.btn-primary:hover {
+    background-color: #4A4DFF;
+}
+
+/* Right side - Illustration */
+.illustration-section {
+    background-color: #5B5FFF;
+    padding: 48px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.illustration-section h3 {
+    font-size: 24px;
+    font-weight: 600;
+    margin-top: 24px;
     z-index: 1;
 }
 
-/* Login Container */
-.login-container {
-    position: relative;
-    background: rgba(255, 255, 255, 0.15);
-    padding: 40px;
-    border-radius: 12px;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
-    max-width: 400px;
-    width: 100%;
-    text-align: center;
-    backdrop-filter: blur(10px);
-    z-index: 2;
+/* Support chat bubble */
+.support-chat {
+    position: absolute;
+    top: 24px;
+    right: 24px;
+    background: rgba(255, 255, 255, 0.1);
+    padding: 8px 16px;
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    backdrop-filter: blur(4px);
 }
 
-/* Form Styling */
-.login-container h2 {
-    color: #ffcc00;
-    /* Gold Heading */
-    margin-bottom: 20px;
+.support-chat img {
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
 }
 
-.input-field {
-    width: 100%;
-    padding: 12px;
-    margin: 10px 0;
-    border: none;
-    border-radius: 6px;
-    font-size: 16px;
-    background: rgba(255, 255, 255, 0.2);
-    color: #fff;
+.support-chat span {
+    font-size: 14px;
+    color: white;
 }
 
-.input-field::placeholder {
-    color: #e0e0e0;
+/* Responsive design */
+@media (max-width: 768px) {
+    .login-box {
+        grid-template-columns: 1fr;
+    }
+
+    .illustration-section {
+        display: none;
+    }
 }
 
-button {
-    background: #ffcc00;
-    color: #1e3a8a;
-    border: none;
-    padding: 12px 20px;
-    font-size: 16px;
-    font-weight: bold;
-    border-radius: 6px;
-    cursor: pointer;
-    width: 100%;
-    transition: background 0.3s ease-in-out;
-}
-
-button:hover {
-    background: #ff6b6b;
-    /* Subtle red on hover */
-    color: #ffffff;
-}
-
-/* Link Styling */
-a {
-    color: #ff6b6b;
-    text-decoration: none;
-    font-weight: bold;
-}
-
-a:hover {
-    color: #ffcc00;
+@media (max-width: 480px) {
+    .form-section {
+        padding: 32px 24px;
+    }
 }

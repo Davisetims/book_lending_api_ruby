@@ -1,0 +1,126 @@
+/* General Styles */
+body {
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(135deg, #f9f9f9, #e0eafc);
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+.edit-profile-container {
+    background: #fff;
+    padding: 2.5rem;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 450px;
+    text-align: center;
+}
+
+h2 {
+    font-size: 2rem;
+    color: #2c3e50;
+    margin-bottom: 1.5rem;
+    font-weight: 600;
+}
+
+h3 {
+    font-size: 1.5rem;
+    color: #34495e;
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+}
+
+.field {
+    margin-bottom: 1.5rem;
+    text-align: left;
+}
+
+.form-label {
+    font-size: 1rem;
+    color: #34495e;
+    font-weight: 500;
+    margin-bottom: 0.5rem;
+    display: block;
+}
+
+.input-field {
+    width: 100%;
+    padding: 0.75rem;
+    border: 2px solid #ddd;
+    border-radius: 10px;
+    font-size: 1rem;
+    color: #333;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.input-field:focus {
+    border-color: #6c5ce7;
+    box-shadow: 0 0 8px rgba(108, 92, 231, 0.2);
+    outline: none;
+}
+
+.actions {
+    margin-top: 2rem;
+}
+
+.submit-button {
+    background-color: #6c5ce7;
+    color: #fff;
+    padding: 0.75rem 1.5rem;
+    border: none;
+    border-radius: 10px;
+    font-size: 1rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.submit-button:hover {
+    background-color: #5a4fcf;
+    transform: translateY(-2px);
+}
+
+.pending-confirmation {
+    color: #e67e22;
+    margin-bottom: 1rem;
+    font-style: italic;
+}
+
+.cancel-account {
+    margin-top: 2rem;
+}
+
+.cancel-button {
+    background-color: #ff7675;
+    color: #fff;
+    padding: 0.5rem 1rem;
+    border: none;
+    border-radius: 10px;
+    font-size: 0.9rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.cancel-button:hover {
+    background-color: #e74c3c;
+    transform: translateY(-2px);
+}
+
+.back-link {
+    display: inline-block;
+    margin-top: 1.5rem;
+    color: #6c5ce7;
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+.back-link:hover {
+    color: #5a4fcf;
+    text-decoration: underline;
+}
