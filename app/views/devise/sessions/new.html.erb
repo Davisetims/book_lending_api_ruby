@@ -1,0 +1,25 @@
+<div class="container">
+  <div class="login-box">
+    <h2>Login</h2>
+    <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+      <div class="input-box">
+        <%= f.label :email %>
+        <%= f.email_field :email, autofocus: true, class: "form-control" %>
+      </div>
+
+      <div class="input-box">
+        <%= f.label :password %>
+        <%= f.password_field :password, class: "form-control" %>
+      </div>
+
+      <div class="input-box">
+        <%= f.submit "Log in", class: "btn btn-primary" %>
+      </div>
+    <% end %>
+
+    <div class="links">
+      <%= link_to "Sign up", new_user_registration_path %> |
+      <%= link_to "Forgot your password?", new_user_password_path %>
+    </div>
+  </div>
+</div>
