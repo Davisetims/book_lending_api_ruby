@@ -53,3 +53,7 @@ gem "sqlite3", "~> 2.5"
 gem "devise", "~> 4.9"
 
 gem "cssbundling-rails", "~> 1.4"
+
+gem "importmap-rails", "~> 2.1"
+
+gem "sprockets-rails", "~> 3.5"
