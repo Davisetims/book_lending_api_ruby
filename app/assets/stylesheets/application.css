@@ -1,4 +1,90 @@
-/* app/assets/stylesheets/application.css */
+/* Apply a full-screen background image */
 body {
-    background-color: #c71b1b;
+    background: url('https://picsum.photos/1600/900') no-repeat center center/cover;
+    color: #ffffff;
+    font-family: 'Poppins', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+/* Dark overlay for better readability */
+body::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.4);
+    /* Adds a dark filter */
+    z-index: 1;
+}
+
+/* Login Container */
+.login-container {
+    position: relative;
+    background: rgba(255, 255, 255, 0.15);
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+    max-width: 400px;
+    width: 100%;
+    text-align: center;
+    backdrop-filter: blur(10px);
+    z-index: 2;
+}
+
+/* Form Styling */
+.login-container h2 {
+    color: #ffcc00;
+    /* Gold Heading */
+    margin-bottom: 20px;
+}
+
+.input-field {
+    width: 100%;
+    padding: 12px;
+    margin: 10px 0;
+    border: none;
+    border-radius: 6px;
+    font-size: 16px;
+    background: rgba(255, 255, 255, 0.2);
+    color: #fff;
+}
+
+.input-field::placeholder {
+    color: #e0e0e0;
+}
+
+button {
+    background: #ffcc00;
+    color: #1e3a8a;
+    border: none;
+    padding: 12px 20px;
+    font-size: 16px;
+    font-weight: bold;
+    border-radius: 6px;
+    cursor: pointer;
+    width: 100%;
+    transition: background 0.3s ease-in-out;
+}
+
+button:hover {
+    background: #ff6b6b;
+    /* Subtle red on hover */
+    color: #ffffff;
+}
+
+/* Link Styling */
+a {
+    color: #ff6b6b;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+a:hover {
+    color: #ffcc00;
 }
