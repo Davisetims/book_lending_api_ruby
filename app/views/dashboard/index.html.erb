@@ -1,0 +1,35 @@
+<div class="container">
+  <h1>Welcome to the BookHive 📚</h1>
+  
+  <% if user_signed_in? %>
+    <p>Hello, <%= current_user.email %>! Here are the available books:</p>
+    
+    <ul>
+  <% @books.each do |book| %>
+    <li>
+      <%= book.title %> by <%= book.author %>
+
+      <% if book.available? %>
+        <%= button_to "Borrow", borrow_book_path(book), method: :post, class: "borrow-btn" %>
+      <% else %>
+        <span class="borrowed">
+          Borrowed by <%= book.user.email %> - 
+          <% if book.due_date.present? %>
+            Due: <%= book.due_date.strftime('%B %d, %Y') %>
+          <% else %>
+            No due date set
+          <% end %>
+        </span>
+      <% end %>
+        </li>
+        <% end %>
+    </ul>
+
+    
+   <%= link_to "Log Out", destroy_user_session_path, method: :delete, class: "logout-btn" %>
+
+ 
+  <% else %>
+    <p>Please <%= link_to "Sign In", new_user_session_path %> to borrow books.</p>
+  <% end %>
+</div>

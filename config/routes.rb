@@ -1,9 +1,19 @@
 Rails.application.routes.draw do
-  get "home/index"
-  root "home#index" # Set the homepage
-
   devise_for :users
 
-  resources :books, only: [ :index, :create, :update, :destroy ]
-  resources :borrowings, only: [ :index, :show, :create, :update, :destroy ]
+  root to: "dashboard#index"
+
+  resources :books, only: [ :index, :show ] do
+    member do
+      post "borrow"
+    end
+  end
+
+  resources :borrowings, only: [ :index, :show, :create, :update ] do
+    member do
+      patch "return_book"  # Change from return_book to return (more RESTful)
+    end
+  end
+
+  get "profile", to: "users#profile", as: "user_profile"
 end

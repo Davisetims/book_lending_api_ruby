@@ -1,0 +1,38 @@
+<div class="container">
+  <h1>User Profile</h1>
+  <div class="profile-container">
+    <h2>Welcome, <%= current_user.email %></h2>
+    <h3>Borrowed Books</h3>
+    <% if @borrowings.any? %>
+      <table class="borrowed-books-table">
+        <thead>
+          <tr>
+            <th>Book Title</th>
+            <th>Author</th>
+            <th>Due Date</th>
+            <th>Action</th>
+          </tr>
+        </thead>
+        <tbody>
+        <% @borrowings.each do |borrowing| %>
+            <tr>
+                <td><%= borrowing.book.title %></td>
+                <td><%= borrowing.book.author %></td>
+                <td><%= borrowing.due_date.strftime("%b %d, %Y") %></td>
+                <td>
+                <% if !borrowing.returned %>
+                    <%= button_to 'Return Book', return_book_borrowing_path(borrowing), method: :patch, class: "btn btn-danger" %>
+                <% else %>
+                    <span>Returned</span>
+                <% end %>
+                </td>
+            </tr>
+            <% end %>
+
+        </tbody>
+      </table>
+    <% else %>
+      <p>No books borrowed yet.</p>
+    <% end %>
+  </div>
+</div>
