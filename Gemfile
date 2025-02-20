@@ -48,7 +48,7 @@ end
 
 
 
-gem "sqlite3", "~> 2.5"
+gem "sqlite3", "~> 2.6"
 
 gem "devise", "~> 4.9"
 
